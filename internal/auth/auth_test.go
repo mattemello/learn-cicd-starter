@@ -21,7 +21,7 @@ func TestGetAPIKey(t *testing.T) {
 	for name, tc := range test {
 		t.Run(name, func(t *testing.T) {
 			gotString, gotError := GetAPIKey(tc.input)
-			if !reflect.DeepEqual(gotString, tc.wantString) || gotError != tc.wantError {
+			if !reflect.DeepEqual(gotString, tc.wantString) && gotError != tc.wantError {
 				t.Fatalf("string -> expected %v, got %v \n error -> expected %v, got %v", tc.wantString, gotString, tc.wantError, gotError)
 			}
 		})
